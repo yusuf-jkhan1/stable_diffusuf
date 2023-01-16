@@ -1,0 +1,8 @@
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+archive/
+generated_images/
+.env
+dev.ipynb
+dev1.ipynb
