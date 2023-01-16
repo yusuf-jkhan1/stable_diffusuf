@@ -36,7 +36,11 @@ class HF_API:
     def generate(self, query):
         data = json.dumps(query)
         data = {
-            "inputs": query,
+            "inputs": {
+                "prompt":query,
+                "guidance_scale":10,
+                "num_inference_steps":100
+            },
             "use_cache": False
         }
         response = self.session.post(f"{HF_BASE_URL}/{self.repo_id}", data=data)
