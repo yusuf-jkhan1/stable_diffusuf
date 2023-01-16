@@ -2,7 +2,7 @@
 
 Sample:  
 
-![image](image.jpeg)
+![image](assets/image.jpeg)
 
 TODO:  
 
