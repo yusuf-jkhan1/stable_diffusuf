@@ -24,9 +24,11 @@ with st.expander("About"):
     - The endpoint offboards the model aggresively (within 60-120 seconds), so it may take a while to load the first time you use it. Or if you pause between generating images.
     """)
     st.write("If I find time, and some free credits, I'll try to host this on a more robust service. That includes a fine-tuning pipeline so you can upload your own images and create avatars of yourself")
-    
+    st.write("Also it's entirely possible my free credits expire without me noticing =)")
 
 with st.expander("Prompt Builder"):
+
+    st.write("Prompt Engineering is the difference between great and garbage generations. I've tried to templatize it as much as makes sense, but this is far from a perfect formula.")
     
     medium_tab, style_tab, background_tab, modifier_tab = st.tabs(["Medium", "Style", "Background", "Modifiers"])
 
