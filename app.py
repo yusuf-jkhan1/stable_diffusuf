@@ -90,6 +90,10 @@ with st.expander("Weighting"):
     subject_weight = st.slider("Subject Weighting", -10.0, 10.0, 0.0, 0.5)
     background_weight = st.slider("Background Weighting", -10.0, 10.0, 0.0, 0.5)
     modifier_weight = st.slider("Modifier Weighting", -10.0, 10.0, 0.0, 0.5)
+#Inference Params
+with st.expander("Inference Parameters"):
+    hf_api.params["num_inference_steps"] = st.slider("Number of Inference Steps", 10, 100, 40, 1)
+    hf_api.params["guidance_scale"] = st.slider("Background Weighting", -10.0, 10.0, 0.0, 0.5)
 
 input_prompt = f"""
 {medium} of yusufjkhan1 as

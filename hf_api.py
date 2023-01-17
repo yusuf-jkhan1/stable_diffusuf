@@ -15,14 +15,21 @@ HF_BASE_URL = "https://api-inference.huggingface.co/models"
 
 
 class HF_API:
+    #TODO: Handle params in a more elegant way. Ew.
     def __init__(self, repo_id, output_path="./generated_images"):
         self.repo_id = repo_id
         self.session = requests.Session()
-        # token = os.getenv("hf_token")
         self.session.headers.update(
             {"Authorization": f'Bearer {os.getenv("hf_token")}'}
         )
         self.output_path = output_path
+        self.params = {
+        "height": 512,
+        "guidance_scale": 10,
+        "width": 512,
+        "num_inference_steps": 50,
+        "negative_prompt" : "duplicate, smile"
+        }
 
     def _make_fpath(self, image_name):
         self.dir = str(datetime.now().strftime("%y_%m_%d_%H_%M_"))
@@ -40,13 +47,7 @@ class HF_API:
         data = json.dumps(query)
         data = {
             "inputs": query,
-            "parameters": {
-                "height": 512,
-                "guidance_scale": 10,
-                "width": 512,
-                "num_inference_steps": 30,
-                "negative_prompt" : "duplicate, smile"
-            }
+            "parameters": self.params
         }
         while True:
             try:
