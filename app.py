@@ -98,7 +98,7 @@ with st.expander("Inference Parameters"):
 input_prompt = f"""
 {medium} of yusufjkhan1 as
 {style} : {subject_weight} |
-{background} : {background_weight} |
+background of {background} : {background_weight} |
 {modifiers} : {modifier_weight}
 """
 
