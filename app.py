@@ -107,9 +107,10 @@ st.write("Prompt: ", display_prompt)
 
 
 if st.button("Generate Image"):
+    hf_api.generate(input_prompt)
+    #TODO: Need to first initialize status, dingus
     while hf_api.status != "Success":
         st.write(hf_api.status)
-        hf_api.generate(input_prompt)
         time.sleep(30)
     st.write(hf_api.status)
     image = Image.open(hf_api._fpath)
