@@ -6,3 +6,4 @@ generated_images/
 .env
 dev.ipynb
 dev1.ipynb
+.vscode/
