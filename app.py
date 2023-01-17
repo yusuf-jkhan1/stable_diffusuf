@@ -18,7 +18,7 @@ st.empty()
 with st.expander("About"):
     st.markdown("""
     > NOTES: 
-    - This is all running on inexepensive endpoints/free tier services, so it may take a while to generate an image. Please be patient. 
+    - This is all running on inexepensive endpoints/free tier services, so it may take a while to generate an image. Upto 5 mins if the model is cold. 
     - For the same reason it will occasionly get confused and generate a blank image. If this happens, just try again with a different input.
     - The endpoint initializes a seed when it is first loaded. Within the same session the outputs are deterministic.
     - The endpoint offboards the model aggresively (within 60-120 seconds), so it may take a while to load the first time you use it. Or if you pause between generating images.
