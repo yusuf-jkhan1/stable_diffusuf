@@ -93,7 +93,7 @@ with st.expander("Weighting"):
 #Inference Params
 with st.expander("Inference Parameters"):
     hf_api.params["num_inference_steps"] = st.slider("Number of Inference Steps", 10, 100, 40, 1)
-    hf_api.params["guidance_scale"] = st.slider("Background Weighting", -10.0, 10.0, 0.0, 0.5)
+    hf_api.params["guidance_scale"] = st.slider("Guidance Scale", 1, 13, 10, 1)
 
 input_prompt = f"""
 {medium} of yusufjkhan1 as
