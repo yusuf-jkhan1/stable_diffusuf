@@ -28,7 +28,7 @@ class HF_API:
         "guidance_scale": 10,
         "width": 512,
         "num_inference_steps": 50,
-        "negative_prompt" : "duplicate, smile"
+        "negative_prompt" : "duplicate, smile, turban"
         }
 
     def _make_fpath(self, image_name):

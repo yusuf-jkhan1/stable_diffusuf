@@ -11,7 +11,7 @@ hf_api = HF_API(os.getenv('hf_repo'))
 
 st.set_page_config(page_title="Stable Diffusuf",layout="wide")
 
-st.header('Stable Diff-usuf v0.1')
+st.header('Stable Diff-usuf v0.2')
 st.subheader('Use prompts to generate Yusuf avatars')
 st.empty()
 
@@ -113,9 +113,7 @@ UHD, 4k resolution
 """
 
 if st.checkbox('Create your own prompt', help="Make sure to include the word 'Yusuf' in the prompt"):
-    input_prompt = st.text_area("Enter your prompt here:", 
-                               placeholder=defaut_prompt.strip()
-    )
+    input_prompt = st.text_area("Enter your prompt here:", defaut_prompt.strip())
     input_prompt.replace("Yusuf", "yusufjkhan1")
 
 if st.button("Generate Image"):
