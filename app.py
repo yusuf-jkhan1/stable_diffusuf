@@ -92,7 +92,7 @@ with st.expander("Weighting"):
     modifier_weight = st.slider("Modifier Weighting", -10.0, 10.0, 0.0, 0.5)
 #Inference Params
 with st.expander("Inference Parameters"):
-    hf_api.params["num_inference_steps"] = st.slider("Number of Inference Steps", 10, 100, 40, 1)
+    hf_api.params["num_inference_steps"] = st.slider("Number of Inference Steps", 10, 200, 75 , 1)
     hf_api.params["guidance_scale"] = st.slider("Guidance Scale", 1, 13, 10, 1)
 
 input_prompt = f"""
@@ -106,7 +106,12 @@ display_prompt = input_prompt.replace("yusufjkhan1", "Yusuf")
 st.write("Prompt: ", display_prompt)
 
 if st.checkbox('Create your own prompt', help="Make sure to includ 'Yusuf' in the prompt"):
-    input_prompt = st.text_area("Enter your prompt here", input_prompt)
+    input_prompt = st.text_area("Enter your prompt here:", 
+                               placeholder="""
+                               Concept Art of Yusuf as a Scuba Diver, Underwater, Fish,
+                               highly detailed, ocean, underwater, scuba mask, scuba suit, scuba diver,
+                               UHD, 4k resolution
+                               """)
     input_prompt.replace("Yusuf", "yusufjkhan1")
 
 if st.button("Generate Image"):
