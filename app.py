@@ -105,6 +105,9 @@ background of {background} : {background_weight} |
 display_prompt = input_prompt.replace("yusufjkhan1", "Yusuf")
 st.write("Prompt: ", display_prompt)
 
+if st.checkbox('Create your own prompt', help="Make sure to includ 'Yusuf' in the prompt"):
+    input_prompt = st.text_area("Enter your prompt here", input_prompt)
+    input_prompt.replace("Yusuf", "yusufjkhan1")
 
 if st.button("Generate Image"):
     hf_api.generate(input_prompt)
